@@ -1,0 +1,32 @@
+<div class="container m-3">
+    <h1 class="mb-3">Edit Product</h1>
+    <form class="col-6"  #form="ngForm" (ngSubmit)="updateProduct()">
+        <div class="form-group">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="name" name="name" 
+            [(ngModel)] = "modifyProductRequest.productName" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="label" class="form-label">Label</label>
+            <input type="text" class="form-control" id="label" name="label"
+            [(ngModel)] = "modifyProductRequest.label" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="startInventory" class="form-label">StartInventory</label>
+            <input type="number" class="form-control" id="startInventory" name="startInventory" 
+            [(ngModel)] = "modifyProductRequest.startInventory" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="minimumRequired" class="form-label">MinimumRequired</label>
+            <input type="number" class="form-control" id="minimumRequired" name="minimumRequired" 
+             [(ngModel)] = "modifyProductRequest.minimumRequired" required/> 
+        </div>
+        <button type="submit" class="btn btn-primary m-2">Save</button> 
+        <button type="button" class="btn btn-danger m-2" 
+        (click)="deleteProduct(modifyProductRequest.productId)">Delete</button>
+    </form>
+
+</div>

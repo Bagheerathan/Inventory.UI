@@ -1,0 +1,30 @@
+<div  >
+    <h1 class="mb-3">Add New Product</h1>
+    <form class="col-12"  #form="ngForm" (ngSubmit)="onNoClick()">
+        <div class="form-group">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="name" name="name" 
+            [(ngModel)] = "addProductRequest.productName" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="label" class="form-label">Label</label>
+            <input type="text" class="form-control" id="label" name="label"
+            [(ngModel)] = "addProductRequest.label" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="startInventory" class="form-label">StartInventory</label>
+            <input type="number" class="form-control" id="startInventory" name="startInventory" 
+            [(ngModel)] = "addProductRequest.startInventory" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="minimumRequired" class="form-label">MinimumRequired</label>
+            <input type="number" class="form-control" id="minimumRequired" name="minimumRequired" 
+             [(ngModel)] = "addProductRequest.minimumRequired" required/> 
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+</div>

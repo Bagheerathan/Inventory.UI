@@ -1,0 +1,34 @@
+<div class="div container m-2 p-3">
+  <button mat-raised-button  (click)="openAddProduct()">Add product</button>
+</div>
+
+<div class="container col-8 p-3">
+    
+    <table class="table" *ngIf="products1 && products1.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">Product Id</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Label </th>
+            <th scope="col">Start Inventory</th>
+            <th scope="col">Inventory Recived</th>
+            <th scope="col">Inventory OnHand</th>
+            <th scope="col">Minimum Required</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products1">
+              <td>{{product.productId}}</td>
+              <td>{{product.productName}}</td>
+              <td>{{product.label}}</td>
+              <td>{{product.startInventory}}</td>
+              <td>{{product.inventoryReceved}}</td>
+              <td>{{product.inventoryOnHand}}</td>
+              <td>{{product.minimumRequired}}</td>
+              <td><a [routerLink]="['/editProduct/',product.productId]">Edit</a></td>
+            </tr>
+          </tbody>
+      </table>
+      <p *ngIf="!products1 || products1.length <= 0"> No products</p>
+    </div>

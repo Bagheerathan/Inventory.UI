@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="mb-3">Add New Purchase</h1>
+    <form class="col-6" #form="ngForm" (ngSubmit)="addPurchase()">
+
+        <div class="form-group">
+            <label for="purchaseDate" class="form-label">PurchaseDate</label>
+            <input type="date" class="form-control" id="purchaseDate" name="purchaseDate" 
+            [(ngModel)]="AddPurchaseRequest.purchaseDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="numReceived" class="form-label">Num Purchase</label>
+            <input type="text" class="form-control" id="numReceived" name="numReceived" 
+            [(ngModel)]="AddPurchaseRequest.numReceived" required />
+        </div>
+
+        <div class="form-group">
+            <label for="supplierId" class="form-label">SupplierId</label>
+            <select id="supplierId" class="form-control" name="supplierId" 
+            [(ngModel)]="AddPurchaseRequest.supplierId" required>
+                <option selected>Choose...</option>
+                <option *ngFor="let supplier of supplier" 
+                [value]="supplier.supplierId">{{ supplier.supplierId }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="productId" class="form-label">ProductId</label>
+            <select id="productId" class="form-control" name="productId" 
+            [(ngModel)]="AddPurchaseRequest.productId" required>
+                <option selected>Choose...</option>
+                <option *ngFor="let product of products" 
+                [value]="product.productId">{{ product.productId }}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+</div>
